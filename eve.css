@@ -1,0 +1,886 @@
+.press-start-2p-regular {
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    
+}
+
+/*remove main scrollbar*/
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+/*custom scrollbar for songtitle menu*/
+div.songtitles::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(29, 29, 29);
+}
+  
+::-webkit-scrollbar-thumb {
+    background: white;
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+body{
+    margin: 0px;
+    background-color: rgb(12, 12, 12);
+    color: white;
+    font-family: 'Charriot Deluxe', sans-serif;
+    display: flex; 
+    flex-direction: column;
+    min-height: 100vh;                                    
+}
+
+.division{
+    clear: both
+}
+
+/*popup function*/
+#blur{
+    transition: 0.2s;
+}
+
+#blur.active{
+    filter: blur(20px);
+}
+
+.popup{
+    position: fixed;
+    top: 1vh;
+    margin-left: 10vw;
+    visibility: hidden;
+    transition: 0.5s;   
+    opacity: 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 3vmin;
+}
+
+.popup.active{
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s top;
+
+}
+
+#videopopup iframe{
+    width: 80vw;
+    height: 45vw;
+}
+/*Header (Navigation Menu)*/
+
+nav img{
+    height: 12vw;
+    width: 12vw;
+}
+
+nav hr{
+    border: none;
+    background-color: white;
+    height: 0.5px;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    margin-bottom: 2vw;
+}
+
+nav{
+    font-family: 'Charriot Deluxe', sans-serif;
+    text-align: center;
+    border-bottom: 1px white solid;
+    color: white;
+    width: 100%;
+    padding-bottom: 2vw;
+    background-color: black;
+}
+
+nav a{
+    display: inline;
+    padding: 2vw 5vw;
+    font-size: 1.5vw;
+}
+
+nav a:hover{
+    background-color: gray;
+    color: rgb(216, 73, 1);
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+.current{
+    color: orange;
+    border-bottom: 2px solid orange;
+    z-index: 2;
+}
+.current:hover{
+    color: rgb(216, 73, 1);
+}
+
+/*Sticky NavBar*/
+
+#navbar{
+    text-align: center;
+    display: block;
+    color: white;
+    font-family: 'Charriot Deluxe', sans-serif;
+    position: fixed;
+    width: 100%;
+    margin-top: -1vw;
+    top: -500px;
+    transition: top 0.1s;
+    background-color: black;
+    z-index: 1;
+    overflow: hidden;
+    border-bottom: 1px solid white;
+}
+
+#navbar img{
+    float: left;
+    margin-top: 1.5vw;
+    margin-left: 2vw;
+    width: 4vw;
+}
+
+#navbar a{
+    float: right;
+    padding-left: 4vw;
+    padding-right: 4vw;
+    padding-top: 1.5vw;
+    padding-bottom: 1.5vw;
+    margin-bottom: -1px;
+    font-size: 1.5vw;
+}
+#navbar a:hover{
+    background-color: darkgray;
+    color: rgb(216, 73, 1);
+
+}
+
+/*Page Footers*/
+#footerseperator{
+    content: '';
+    height: 10vh;
+}
+
+
+
+#pagefooter{
+    margin-top: auto;
+    background-color: rgb(12, 12, 12);
+    border-top: 1px white solid;
+    width: 100%;
+}
+
+#pagefooter:after{
+    clear:both;
+    height: 1vmin;
+    width: 100%;
+    content: '';
+    display: block;
+}
+
+#sns{
+    float: left;
+    overflow: hidden;
+}
+
+#sns img.first{
+    margin-left: 2vw;
+}
+
+#sns img{
+    width: 5vmin;
+    margin-left: 0.5vw;
+    display: inline;
+    border-radius: 1vmin;
+    background-color: white;
+}
+
+#sns img:hover{
+    opacity: 0.6;
+}
+
+#pagefooter .first{
+    margin-top: 2vmin;
+}
+
+#copyright{
+    font-size: 1.5vmin;
+    float: right;
+    overflow: hidden;
+    margin-right: 2vw;
+}
+
+/*Code copied from github to stop AOS and sitcky navbar from overlapping*/
+.aos-init[data-aos][data-aos].aos-animate {
+    transform: unset;
+}
+
+/*Who is Eve?*/
+.abouteve{
+    margin-top: 5vw;
+}
+
+.abouteve h2{
+    font-size: 6vmin;
+    margin-bottom: 2vmin;
+}
+
+.abouteve img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30vmin;
+}
+
+.abouteve p{
+    line-height: 1.2;
+    font-size: 3vmin;
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+
+/*Timeline styling*/
+#timelinehead{
+    font-size: 5vw;
+}
+
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    transition: height 4s;
+}
+
+/* Time LINE */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 1vmin;
+    background-color: white;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -7px;
+}
+
+.container.last{
+    content: '';
+    height: 4vmin;
+}
+
+.container.last::after{
+    width: 0px;
+}
+
+/* container ard text */
+.container {
+    padding: 1vw 1vw;
+    position: relative;
+    width: 48%;
+    font-size: 3vmin;
+}
+
+.container h2{
+    margin-left: 0.8vw;
+}
+
+.container p{
+    margin-left: 0.5vw;
+}
+
+.container img{
+    transition: 0.5s;
+}
+
+.container img:hover{
+    opacity: 0.6;
+}
+
+.left {
+    left: 0;
+}
+.right {
+    left: 50%;
+}
+
+.first{
+    margin-top: 30px;
+}
+
+/*video styling*/
+#timeline img{
+    width: 30vw;
+}
+
+
+/*EVEEVENTS*/
+
+#eventnav{
+    margin-top: 3vmin;
+    margin-bottom: -3px;
+    margin-left: 5vw;
+    font-family: 'BitBold';
+}
+
+#eventnav button{
+    font-size: 2.5vmin;
+    padding: 1vmin;
+    border-bottom: none;
+    color: white;
+    font-family: 'BitBold';
+    background-color: #555;
+    border: 3px solid rgb(50, 50, 50);
+}
+
+#eventnav button:hover{
+    background-color: gray;
+}
+
+#eventnav button.current{
+    color: orange;
+    background-color: darkslategray;
+    border: 3px rgb(50,50,50) solid;
+    padding-bottom: calc(1vmin + 3px);
+    border-bottom: none;
+    z-index: 2;
+}
+
+#culturetour{
+    padding-top: 1vmin;
+    padding-bottom: 1vmin;
+    margin-left: 5vw;
+    margin-right: 4vw;
+    background-color: darkslategrey;
+    border: 3px rgb(50, 50, 50) solid;
+}
+
+#culturetour hr{
+    border: none;
+    background-color: white;
+    height: 2px;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    transition: 0.3s;
+}
+
+#culturetour h1{
+    margin-top: 1vmin;
+    font-size: 5vmin;
+    color: rgb(255, 255, 255);
+    transition: 0.3s;
+}
+
+#culturetour h2{
+    margin-top: -3vmin;
+    font-size: 3vmin;
+    font-weight: 100;
+    color: rgb(252, 154, 89);
+    transition: 0.3s;
+}
+
+#culturetour img{
+    margin-top: 3vmin;
+    width: 75%;
+    transition: 0.3s;
+    border-radius: 1vmin;
+}
+
+#culturetour img:hover{
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+#culturetour h1, h2{
+    margin-left: 4vw;
+    transition: 0.3s;
+}
+
+#culturetour table{
+    margin-left: 0.8vw;
+    background-color: darkslategray;
+    border-collapse: collapse;
+    border: 0.3vmin white solid;
+    width: 88.5vw;
+    overflow-x: auto;
+    margin-bottom: 2vmin;
+    transition: 0.3s;
+}
+
+#culturetour th{
+    padding: 1vmin;
+    font-size: 2.2vmin;
+    transition: 0.3s;
+}
+
+#culturetour td{
+    padding: 1vmin;
+    font-size: 2vmin;
+    transition: 0.3s;
+}
+
+#culturetour.present img{
+    border-radius: 0px;
+    margin-bottom: 4vmin;
+    transition: 0.3s;
+}
+
+#culturetour.present img:hover{
+    opacity: 1;
+    transition: 0.3s;
+}
+
+#culturetour .eventinfo{
+    margin-top: 5vw;
+    margin-left: 11vw;
+    margin-right: 11vw;
+    font-size: 2vw;
+    transition: 0.3s;
+}
+
+
+#culturetour .eventinfo h3{
+    text-decoration: underline;
+    font-size: 3vw;
+    margin-bottom: -1vw;
+    transition: 0.3s;
+}
+
+#header{
+    font-size: 4vmin;
+    margin-bottom: 1vmin;
+    transition: 0.3s;
+}
+
+#tablefoot{
+    font-size: 2vmin;
+    color: rgb(207, 207, 207);
+    transition: 0.3s;
+}
+
+
+
+/*EVESONGS*/
+#evesongpage h2{
+    font-size: 6vmin;
+}
+
+#evesongpage h6{
+    font-size: 3vmin;
+}
+
+#evesongpage hr{
+    margin-left: 2vw;
+    margin-right: 2vw;
+    border: none;
+    background-color: white;
+    height: 0.5px;
+}
+
+#navdivision{
+    height: 0px;
+}
+
+/*New Song*/
+#newsong{
+    margin-top: 10vmin;
+    font-family: 'ArcadeClassic', sans-serif;
+}
+
+#newsong h2{
+    letter-spacing: 1px;
+    font-size: 6vw;
+}
+
+#newsong h4{
+    font-family: 'Charriot Deluxe', sans-serif;
+    font-size: 3vw;
+    letter-spacing: 1px;                
+    color: rgb(255, 163, 207);
+    margin-top: -2vw;
+}
+
+#newsong iframe{
+    width: 100%;
+    height: 56.25vw;
+}
+
+#newsong p{
+    font-size: 1.8vmin;
+}
+
+/*albums*/
+
+#albums{
+    display:block;
+}
+
+.album span{
+    color: gray;
+    font-style: italic;
+    font-size: 2vmin;
+}
+
+#albums hr{
+    margin-bottom: 2vmin;
+    margin-left: 4vw;
+    margin-right: 4vw;
+    border: none;
+    background-color: white;
+    height: 1px;
+    max-height: 3px;
+
+}
+
+.album .image{
+    width: 20vmin;
+    height: 20vmin;
+    border-radius: 3%;
+    transition: 0.5s;
+}
+
+.album:hover > .image{ 
+    width: 25vmin;
+    height: 25vmin;
+}
+
+#albums p{
+    display: inline;
+    font-size: 3vmin;
+    margin-left: 1vmin;
+}
+
+.album{
+    margin-bottom: 1.5vmin;
+    margin-left: 4vw;
+    margin-right: 4vw;
+    background-color: rgb(29, 29, 29);
+    transition: 0.5s;
+    border-radius: 2%;
+}
+
+/*singles*/
+
+#singles{
+    display: block;
+    margin-top: 10vmin;
+}
+
+#singles hr{
+    margin-bottom: 2vmin;
+    margin-left: 4vw;
+    margin-right: 4vw;
+    border: none;
+    background-color: white;
+    height: 1px;
+    max-height: 3px;
+}
+
+#singles p{
+    display: inline;
+    font-size: 3vmin;
+    margin-left: 1vmin;
+}
+
+#singles h6{
+    color: lightgrey;
+    font-style: italic;
+}
+
+.single span{
+    color: gray;
+    font-style: italic;
+    font-size: 2vmin;
+}
+
+.single .play{
+    display: none;
+    height: 10vmin;
+    width: 10vmin;
+    margin-top: 20vmin;
+    margin-right: 10vmin;
+    float: right;
+    transition: 0.5s;
+}
+
+.single{
+    margin-bottom: 1.5vmin;
+    margin-left: 4vw;
+    margin-right: 4vw;
+    background-color: rgb(29, 29, 29);
+    transition: 0.5s;
+    border-radius: 5px;
+}
+
+.single .image{
+    width: 20vmin;
+    height: 20vmin;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+.single:hover .image{
+    width: 25vmin;
+    height: 25vmin;
+}
+
+.albumpage{
+    margin-top: 5vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-bottom: 5vw;
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+    border-radius: 1vmin;
+    font-size: 3vw;
+    position: relative;
+    background-color: rgb(29, 29, 29);
+}
+
+.albumpage img{
+    float: left;
+    width: 20vw;
+    margin-left: 2vw;
+    margin-right: 3vw;
+    margin-bottom: 3vw;
+    border-radius: 1vmin;
+    transition: 0.5s;
+}
+
+.albumpage img:hover{
+    opacity: 0.6;
+}
+
+.albumpage span{
+    color: gray;
+    font-style: italic;
+    font-size: 2.5vmin;
+}
+
+.albumpage .button{
+    font-size: 1.5vmin;
+    float: right;
+    margin-top: -1vmin;
+    margin-right: 1vmin;
+    padding: 1vw;
+}
+
+.albumpage .button:hover{
+    background-color: rgb(50, 50, 50);
+}
+
+.albumpage.division{
+    margin-bottom: -1vmin;
+}
+
+.songtitles{
+    height: 40vmin;
+    overflow-y: auto;
+    background-color: rgb(29, 29, 29);
+    border-bottom-left-radius: 1vmin;
+    border-bottom-right-radius: 1vmin;
+}
+
+.songtitle{
+    clear: left;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    margin-top: -3vmin;
+    padding-bottom: 1px;
+    transition: 0.2s;
+    box-sizing: border-box;
+}
+
+.songtitle.first{
+    margin-top: 1vw;
+}
+
+.songtitle p{
+    font-size: 2vw;
+    margin-left: 2vw;
+}
+
+.songtitle:hover{
+    background-color: rgb(50, 50, 50);
+
+}
+
+/* Checkbox styling credit: w3schools */
+.quizcont {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.quizcont input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    display: inline-flex;
+    top: 0;
+    left: 0;
+    height: 2vmin;
+    width: 2vmin;
+    background-color: lightgrey;
+}
+
+.quizcont input:checked ~ .checkmark {
+    background-color: orangered;
+}
+
+input[type=submit]{
+    background-color: darkslategray;
+    text-decoration: none;
+    font-family: 'Charriot Deluxe';
+    color: white;
+    border: none;
+    font-size: 2.5vmin;
+}
+
+input[type=submit]:hover{
+    background-color: gray;
+}
+
+/* Eve Quiz*/
+
+#quiz{
+    position: relative;
+    text-align: center;
+    margin-top: 10vw;
+    margin-bottom: 10vw;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80vw;
+    max-width: 600px;
+    font-family: 'Charriot Deluxe', sans-serif;
+    font-size: 2.5vmin;
+    padding: 5%;
+    border: 1vmin white solid;
+    background-color: darkslategrey;
+}
+
+#quiz h1{
+    font-size: 5vmin;
+    font-family: 'BitBold';
+    color: aquamarine;
+}
+
+#quiz h2{
+    font-size: 3vmin;
+    text-decoration: underline;
+    margin-left: -1vw;
+}
+
+#quiz label{
+    display: inline;
+    font-size: 3vmin;
+    margin-left: -0.8vw;
+}
+
+#confirm h1{
+    font-family: 'Charriot Deluxe';
+}
+
+#navbuttons{
+    padding: 1vw;
+    bottom: 0;
+}
+
+#navbutton:hover{
+    background-color: grey;
+}
+
+#undoneqns{
+    text-decoration: none;
+    color: rgb(255, 183, 0);
+}
+
+/*EVESOCIAL*/
+
+#slinks{
+    position: relative;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    margin-bottom: 5vw;
+    padding-bottom: 10vw;
+}
+
+.othercontent{
+    position: relative;
+}
+
+#slinks hr{
+    margin-bottom: 4vmin;
+}
+
+#slinks h3{
+    font-size: 4vw;
+    text-align: center;
+}
+
+#slinks p{
+    position: absolute;
+    bottom: 0;
+}
+
+#snsicons{
+    margin-top: 10vw;
+}
+
+#snsicons img{
+    border-radius: 2vmin;
+}
+
+#background{
+    position: absolute;
+    width: 100vw;
+    filter: blur(2px);
+    opacity: 0.5;
+    margin-left: -2vw;
+}
+
+
+#mainimg{
+    width: 30vmin;
+    float: left;
+    margin-right: 3vw;
+}
+
+#snsicons img{
+    width: 9vw;
+    display: inline;
+    margin-right: 2vw;
+    transition: 0.2s;
+    background-color: white;
+}
+
+#snsicons img:hover{
+    opacity: 0.6;
+}

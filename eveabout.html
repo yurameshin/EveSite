@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="eve.css">
+    <title>Eve - About</title>
+    <link rel="icon" href="./Images/evelogoOG.jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/charriot-deluxe" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/bitbold" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/arcade-classic" rel="stylesheet">
+    
+    <!--AOS Animation Library-->
+    <link href="https://fonts.cdnfonts.com/css/superbly" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      //Function to show a certain part of the page
+      function show(shown, hidden) {
+          document.getElementById(shown).style.display='block';
+          document.getElementById(hidden).style.display='none';
+          return false;
+      }
+
+      function toggle(obj){
+        var blur = document.getElementById('blur')
+        blur.classList.toggle('active')
+        console.log(obj)
+        var popup = document.getElementById(obj)
+        popup.classList.toggle('active')
+      }
+
+  </script>
+</head>
+<body id="eveaboutpage">
+      <!--Navigation Menu-->
+  <div id="blur">
+    <div class="mainpage">
+      <div id = "navbar">
+        <img src="./Images/evelogoorange.jpg" alt="">
+        <div id="navbuttons">
+            <a href="evesocial.html">Socials</a>
+            <a href="evegame.html">Game</a>
+            <a href="evesongs.html">Songs</a>
+            <a href="eveevents.html">Events</a>
+            <a href="eveabout.html"  class="current">About</a>
+        </div>
+      </div>
+      
+      <nav>
+          <img src="./Images/evelogoorange.jpg" alt="">
+          <hr>
+          <a href="eveabout.html" class="current">About</a>
+          <a href="eveevents.html">Events</a>
+          <a href="evesongs.html">Songs</a>
+          <a href="evegame.html">Game</a>
+          <a href="evesocial.html">Socials</a>
+      </nav>
+        <div class = "abouteve">
+          <h2 class="center">Who is Eve?</h2>
+          <a href="https://utaite.fandom.com/wiki/Eve" target="_blank"><img src="./Images/evesinger image.jpg" alt=""></a>
+          <p class="center">Eve (born 23 May 1995), also formerly known as Keitora (けいとら) and Kurowa (クロわ), is a Japanese singer-songwriter and Vocaloid producer. He first debuted in the music industry by singing covers of popular music on Niconico, a apanese social media site.</p>
+          <hr>
+        </div>
+        <h2 data-aos="fade-in" class="center" id="timelinehead">Eve's Journey</h2>
+        <br>
+        <div class="timeline" data-aos="fade-in" id="timeline">
+            <div class="container left first" data-aos="fade-in">
+              <div class="content">
+                <h2>2009</h2>
+                <a href="https://www.facebook.com/Amiishiichii/videos/eve-tragic-boy-cover/634713627457722/" target="_blank"><img src="./Images/TRAGIC_BOY.png" alt=""></a>
+                <p>Eve began his career on NicoNico under the alias Kurowa, singing "TRAGIC BOY"</p>
+              </div>
+            </div> 
+            <div class="container right" data-aos="fade-in">
+              <div class="content">
+                <h2>2012</h2>
+                <a href="https://utaite.fandom.com/wiki/Category:Einie" target="_blank"><img src="./Images/einie.webp" alt=""></a>
+                <p>Eve became the lead singer for the Japanese indie band Einie</p>
+              </div>
+            </div>
+            <div class="container left" data-aos="fade-in">
+              <div class="content">
+                <h2>2015</h2>
+                <a href="https://open.spotify.com/album/1RKJFdPlDfbLxIvzpr6w8K?si=uK5aw6feTNu2iEucy1EYpg" target="_blank"><img src="./Images/wonderwordlandscape.jpg" alt=""></a>
+                <p>Eve debuted with his first album, "Wonder World"</p>
+              </div>
+            </div>
+            <div class="container right" data-aos="fade-in">
+              <div class="content">
+                <h2>2016</h2>
+                <a href="https://open.spotify.com/album/2AxkAqRmDqZJB03UPQaC0B?si=7VjAYvfmSbuVJNk2cmJEFA" target="_blank"><img src="./Images/offnumlandscape.jpg" alt=""></a>
+                <p>Eve release his third album "Official Number", which became his first-ever charting album.</p>
+              </div>
+            </div>
+            <div class="container left" data-aos="fade-in">
+              <div class="content">
+                <h2>2017</h2>
+                <img src="./Images/dramaturgy.jpg" alt=""  onclick="toggle('dramapopup')">
+                <p>Eve released "Dramaturgy", a song that many people know him for. It still remains the second most popular song of his today.</p>
+              </div>
+            </div>
+            <div class="container right" data-aos="fade-in">
+              <div class="content">
+                <h2>2020</h2>
+                <img src="./Images/Kaikai_Kitan_Music_Jacket.jpg" alt="" onclick="toggle('kaipopup')">
+                <p>Eve released two albums, Otogi and Smile, alongside "KaiKai Kitan", which was the opening song for "Jujutsu Kaisen". This song skyrocketed his popularity and is his most played song today.</p>
+              </div>
+            </div>
+            <div class="container left" data-aos="fade-in">
+              <div class="content">
+                <h2>2022</h2>
+                <img src="./Images/fightsong.jpg" alt="" onclick="toggle('fightsongpopup')">
+                <p>Eve released "Fight Song", the 12th Ending Theme for the anime "Chainsaw Man"</p>
+              </div>
+            </div>
+            <div class="container right" data-aos="fade-in">
+              <div class="content">
+                <h2>TODAY</h2>
+                <a href="https://eveofficial-culture.com/" target="_blank"><img src="./Images/EveCulture_landscape.jpg" alt=""></a>
+                <p>Eve's popularity still continues to increase exponentially, with him even having finished his first overseas tour, "Culture" recently.</p>
+              </div>
+            </div>
+            <div class="container last" data-aos="fade-in">
+              <div class="content">
+              </div>
+            </div>
+        </div>
+    </div>
+    <div id="pagefooter">
+        <div id="sns">
+          <a href="https://x.com/oo0eve0oo?lang=en" target="_blank"><img src="./Images/twitter-logo-black-and-white-2.jpg" alt="" class="first"></a>
+          <a href="https://www.instagram.com/eve_harapeco/" target="_blank"><img src="./Images/instagram.jpg" alt=""></a>
+          <a href="https://www.youtube.com/channel/UCUXfRsEIJ9xO1DT7TbEWksw" target="_blank"><img src="./Images/youtube logo.jpg" alt=""></a>
+          <a href="https://www.eveofficialstore.com/" target="_blank"><img src="./Images/shop image.png" alt=""></a>
+          <a href="https://eveofficial.com/" target="_blank"><img src="./Images/evelogowhite.jpg" alt=""></a>
+        </div>
+        <div id="copyright">
+          <p>All multimedia used <br> &#169; Eve <br> &#169; Toy's Factory </p>
+        </div>
+    </div>
+  </div>
+
+      <div id="videopopup">
+        <div class="popup" id="dramapopup">
+          <p onclick="toggle('dramapopup')">CLOSE</p>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/jJzw1h5CR-I?si=2w6x5H4vFzIGuqwD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="popup" id="kaipopup">
+          <p onclick="toggle('kaipopup')">CLOSE</p>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/1dDvMEisEC8?si=_3MdGruNzVj2a32X" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="popup" id="fightsongpopup">
+          <p onclick="toggle('fightsongpopup')">CLOSE</p>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/2eOg5DoYuwU?si=pElNJHn_wCQkGF_O" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+
+    <script>
+        AOS.init({
+            duration: 1500,
+        })
+        var height = (document.getElementsByTagName("NAV")[0].offsetHeight)*0.9
+
+        /*Sticky NavBar Scroll*/
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            var height = (document.getElementsByTagName("NAV")[0].offsetHeight)*0.9
+            if (document.body.scrollTop > height || document.documentElement.scrollTop > height) {
+                document.getElementById("navbar").style.top = "0";
+            } else {
+                document.getElementById("navbar").style.top = "-200px";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="eve.css">
+    <title>Eve - Songs</title>
+    <link rel="icon" href="./Images/evelogoOG.jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/charriot-deluxe" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/bitbold" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/arcade-classic" rel="stylesheet">
+    <script>
+        //Function to show a certain part of the page
+        function show(shown, hidden) {
+            document.getElementById(shown).style.display='block';
+            document.getElementById(hidden).style.display='none';
+            return false;
+        }
+    </script>       
+    <script>
+        function play(obj) {
+            obj.parentNode.childNodes[3].play();
+        }
+        
+        function stop(obj) {
+            obj.parentNode.childNodes[3].pause();
+        }
+        
+    </script>
+</head>
+<body id="evesongpage">
+    <!--Navigation Menu-->
+    <div id = "navbar">
+        <img src="./Images/evelogoorange.jpg" alt="">
+        <div id="navbuttons">
+            <a href="evesocial.html">Socials</a>
+            <a href="evegame.html">Game</a>
+            <a href="evesongs.html" class="current">Songs</a>
+            <a href="eveevents.html">Events</a>
+            <a href="eveabout.html">About</a>
+        </div>
+    </div>
+    
+
+    <nav>
+        <img src="./Images/evelogoorange.jpg" alt="">
+        <hr id="navdivision">
+        <a href="eveabout.html">About</a>
+        <a href="eveevents.html">Events</a>
+        <a href="evesongs.html" class="current">Songs</a>
+        <a href="evegame.html">Game</a>
+        <a href="evesocial.html">Socials</a>
+    </nav>
+    <div id="mainsongpage">
+        <div id="newsong">
+            <h2 class="center">Newest Song</h2>
+            <h4 class="center">SWEET MEMORY</h4>
+            <iframe class = "center" src="https://www.youtube.com/embed/kk6meRqr-o4?si=fpsfLHBciOJUFbUD&autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <p class="center">Ⓒ米澤穂信・東京創元社／小市民シリーズ製作委員会
+            </p>
+        </div>
+        <div id = "albums">
+            <h2 class="center">Albums</h2>
+            <hr>
+            <a href="#"><div id="Kaizin" class="album" onclick="show('kaizinpage','mainsongpage')">
+                <img src="./Images/Kaizin Cover.jpg" class="image">
+                <p class="text">Kaizin <span>2022</span></p>
+            </div></a>
+            <a href="#"><div id="KaiKK-AnW" class="album" onclick="show('kk-anwpage','mainsongpage')">
+                <img src="./Images/KKK AnW.jpeg" class="image">
+                <p>KaiKai Kitan/Ao No Waltz <span>2020</span></p>
+            </div></a>
+            <a href="#"><div id="Smile" class="album" onclick="show('smilepage','mainsongpage')">
+                <img src="./Images/Smile Cover.jpg" class="image">
+                <p>Smile <span>2020</span></p>
+            </div></a>
+            <a href="#"><div id="Otogi" class="album" onclick="show('otogipage','mainsongpage')">
+                <img src="./Images/Otogi.jpeg" class="image">
+                <p>Otogi <span>2019</span></p>
+            </div></a>
+            <a href="#"><div id="Blue" class="album" onclick="show('bluepage','mainsongpage')">
+                <img src="./Images/Blue.jpeg" class="image">
+                <p>Blue <span>2018</span></p>
+            </div></a>
+            <a href="#"><div id="Bunka" class="album" onclick="show('bunkapage','mainsongpage')">
+                <img src="./Images/Bunka Cover.webp" class="image">
+                <p>Bunka <span>2017</span></p>
+            </div></a>
+            <a href="#"><div id="Official-Number" class="album" onclick="show('offnumpage','mainsongpage')">
+                <img src="./Images/Official Num.jpeg" class="image">
+                <p>Official Number <span>2016</span></p>
+            </div></a>
+            <a href="#"><div id="Round-Robin" class="album" onclick="show('roundrpage','mainsongpage')">
+                <img src="./Images/round robin.jpg" class="image">
+                <p>Round Robin <span>2015</span></p>
+            </div></a>
+            <a href="#"><div id="Wonder-Word" class="album" onclick="show('wonderwpage','mainsongpage')">
+                <img src="./Images/wonder world.webp" class="image">
+                <p>Wonder Word <span>2015</span></p>
+            </div></a>
+        </div>
+        <div id="singles">
+            <h2 class="center">Singles</h2>
+            <h6 class="center">*hover over image to hear preview</h6>
+            <hr>
+            <a href="https://open.spotify.com/album/5c6vbmjDI8YwTlAK96knrK?si=fhzIJTEsRISPyDTHskSR9g" target="_blank"><div id="Sweet-Memory" class="single">
+                <img id = "Sweet-Memory-Img" src="./Images/Sweet Memory.jpeg" class="image" onmouseover="play(this)" onmouseout="stop(this)">
+                <audio src="./Music/Sweet Memory.mp3"></audio>
+                <img src="./Images/Music Playing.png" alt="" class="play">
+                <p>Sweet Memory <span>2024</span></p>
+            </div></a>
+            <a href="https://open.spotify.com/album/4lLvbKgQ1GGMLmCn9Fz1QR?si=aMIHiGSfRDG0gsGW8q-LJQ" target="_blank"><div id="LTFWM" class="single">
+                <img id = "LTFWM-Img" src="./Images/LTFWM.jpeg" class="image" onmouseover="play(this)" onmouseout="stop(this)">
+                <audio src="./Music/Like The Flatwoods Monster.mp3"></audio>
+                <p>Like The Flatwoods Monster <span>2024</span></p>
+            </div></a>
+            <a href="https://open.spotify.com/album/6Ovp9dcCxs7SHtVVkm2nzL?si=qsYTXLnnQPCotVo--qFmJQ" target="_blank"><div id="Glorious-Day" class="single">
+                <img id = "Glorious-Day-Img" src="./Images/Glorious Day.jpeg" class="image" onmouseover="play(this)" onmouseout="stop(this)">
+                <audio src="./Music/Glorious Day.mp3"></audio>
+                <p>Glorious Day <span>2024</span></p>
+            </div></a>
+            <a href="https://open.spotify.com/album/51QJlvJclfVB6jNNXlDatS?si=vsvpXuAeQJqi42ODqjdAMg" target="_blank"><div id="Insomnia" class="single">
+                <img id = "Insomnia-Img" src="./Images/insomnia eve.webp" class="image" onmouseover="play(this)" onmouseout="stop(this)">
+                <audio src="./Music/Insomnia.mp3"></audio>
+                <p>Insomnia <span>2024</span></p>
+            </div></a>
+        </div>
+    </div>
+
+    <!--Hidden Album Pages-->
+    <div id="kaizinpage" class="albumpage" style="display: none;">
+        <a href="https://open.spotify.com/album/1Kmjj1yj98JJdJ4XoNjrI1?si=yzri-448QA-59Wc5JJ6zew" target="_blank"><img src="./Images/Kaizin Cover.jpg" alt=""></a>
+        <a href="#Kaizin" class="button" onclick="show('mainsongpage','kaizinpage')">Back</a>
+        <p>Kaizin</p>
+        <p><span>2022 &#x2022; 14 songs</span></p>
+        <hr><hr><hr class="division">
+        <div class="songtitles">
+            <div class="songtitle first">
+                <a href="https://open.spotify.com/track/7DIJPVGJuPBjWTvj4Pwuom?si=b62c0f610c104ccd" target="_blank"><p>Kaizin</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/2VTQ5dj99ofbGkszuTTu35?si=f5c72332256d45c3" target="_blank"><p>KaiKai Kitan</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/4yfJpqnjxWd7iHFyYUVC26?si=cf269b2bff1940e5" target="_blank"><p>Yoruwahonoka</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/5QkNlpfeEmsZYbtCqHdPDl?si=db461a88447649bd" target="_blank"><p>Yuseiboshi</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/1DqAeuDzc5uUQeAggxmZk5?si=57a5abcde14f410e" target="_blank"><p>Bouto</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/5hdYHlf3e2x2XtWI8gr9mB?si=e0fd2b8d58e640a5" target="_blank"><p>Heikousen</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/0ac12GgX8LZK0VNC4N91o2?si=a32ee31c63d9499b" target="_blank"><p>Yoku</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/3XWUt4L6YIbpmxEZjdpPpk?si=5064b4fb77284234" target="_blank"><p>Ao No Waltz</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/47ViWig4fX6pb39TLzh3AD?si=2a30928deb634f4e" target="_blank"><p>Shinkai</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/5rq7yhcpsofB04NgTqlY8r?si=77aa3880b59e40f8" target="_blank"><p>Gunjo Sanka</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/1ZSznxT0bJLPGbWTzzLGLz?si=86e92ef6d8764c70" target="_blank"><p>Kotonoha</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/44z0ijVFwQhEKgvUwQtj6t?si=f0958aa13f0249a5" target="_blank"><p>Aisai</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/0Ca4nK97pypPdmpZcUeGZb?si=39b35749237a4843" target="_blank"><p>Taikutsuwo Saienshinaide</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/4tscsbUMuX7EUZE2m97C6d?si=c1c983a8b7d24a69" target="_blank"><p>Avant</p></a>
+            </div>
+        </div>
+    </div>
+    <div id="kk-anwpage" class="albumpage" style="display: none;">
+        <a href="https://open.spotify.com/album/6BZjN6j79mjz7PJfGmvCR1?si=6z6qbg_ZQiiOOdplMmmBOQ" target="_blank"><img src="./Images/KKK AnW.jpeg" alt=""></a>
+        <a href="#KaiKK-AnW" class="button" onclick="show('mainsongpage','kk-anwpage')">Back</a>
+        <p>Kaikai Kitan/Ao No Waltz</p>
+        <p><span>2022 &#x2022; 7 songs</span></p>
+        <hr><hr>><hr class="division">
+        <div class="songtitles">
+            <div class="songtitle first">
+                <a href="https://open.spotify.com/track/6y4GYuZszeXNOXuBFsJlos?si=723b3bfc0fb04ce0" target="_blank"><p>KaiKai Kitan</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/1AfFUID69eG8hOkkc3asNM?si=0668d13ecc8444df" target="_blank"><p>Ao No Waltz</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/44VYdLnwvhn1H1cfieb84a?si=7eb1df3a883c451d" target="_blank"><p>Shinkai</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/3tFq9arkcubkFhDswd43nw?si=6d11f7de272141cc" target="_blank"><p>Yoino Myojo</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/5M4Cb3rtdMWa53ypyExGKJ?si=ec7b264cf3af4a44" target="_blank"><p>Yuyu Meimei</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/64LPuxHb07MU9Pqmkd4knj?si=81e2841b25754c62" target="_blank"><p>Yakusoku</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/4p6uyqSCeH1rawrEVn07JT?si=6f9f5bd1f3504def" target="_blank"><p>Byouka</p></a>
+            </div>
+        </div>
+    </div>
+    <div id="smilepage" class="albumpage" style="display: none;">
+        <a href="https://open.spotify.com/album/6A6B0189k4kfQlSy1NzAsx?si=HtRR5g1kQ4G91iceG5Hi1g" target="_blank"><img src="./Images/Smile Cover.jpg" alt=""></a>
+        <a href="#Smile" class="button" onclick="show('mainsongpage','smilepage')">Back</a>
+        <p>Smile</p>
+        <p><span>2020 &#x2022; 13 songs</span></p>
+        <hr><hr><hr class="division">
+        <div class="songtitles">
+            <div class="songtitle first">
+                <a href="https://open.spotify.com/track/2Ah1T9o9QPGTxwvtMimOoe?si=37719d3b434d4687" target="_blank"><p>Doublet</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/1GsAU0aPUjNcYDbZErzVmI?si=447b14c5e9f642e2" target="_blank"><p>Leo</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/7dOGSR13vk5532IuIgKO4T?si=65d6e0d451d54a9b" target="_blank"><p>Raison Detre</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/3kHIqWVLgUi9eqiqrD4Q91?si=0b8e19e7b0ab4bfd" target="_blank"><p>Kara No Kioku</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/0maSUktGFelOHPjTP8c1Kd?si=7b0735d448374b0b" target="_blank"><p>Inochi No Tabekata</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/2xL6YS9TucCVbIpLXawfFC?si=dae544364f464eb2" target="_blank"><p>Yamiyo</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/3BDZyESMdsPvAdSfdTBmAv?si=dcf5463514764c74" target="_blank"><p>Asa Ga Furu</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/1pjXUZFaDSgf9wV1X76aXw?si=c59e59b4193a4a27" target="_blank"><p>Kokoroyohou</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/3cwykuEbMGkt1iza7QOb2p?si=2878e7942c3649c5" target="_blank"><p>Hakugin</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/0IdFvNmljpZ2xCN58GHLwH?si=d4bd0a704f3543ca" target="_blank"><p>Baumkuchen End</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/3w5kFSmtOVC5XAifIwR9Xz?si=6124d5a8d7a24c44" target="_blank"><p>Mellow</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/6kCDyVwoGrgcI19CupxkLL?si=5b6a2ac8bd9e4b47" target="_blank"><p>Ognanje</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/5PAS6MK2FLn0LCgEIdqjCa?si=8ccb21f684d54b2b" target="_blank"><p>Uron Na Shokutaku</p></a>
+            </div>
+        </div>
+    </div>
+    <div id="otogipage" class="albumpage" style="display: none;">
+        <a href="https://open.spotify.com/album/0DPYGljGMyfZU00CGnDJJo?si=jiaCBOF-Rn6CllCZuteSoA" target="_blank"><img src="./Images/Otogi.jpeg" alt=""></a>
+        <a href="#Otogi" class="button" onclick="show('mainsongpage','otogipage')">Back</a>
+        <p>Otogi</p>
+        <p><span>2019 &#x2022; 11 songs</span></p>
+        <hr><hr><hr class="division">
+        <div class="songtitles">
+            <div class="songtitle first">
+                <a href="https://open.spotify.com/track/31nEBZ6OCvYhoy628XaVvQ?si=621fdf6272d54ed0" target="_blank"><p>Slumber</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/4iiImoJUNnE4MpH3r1l5P4?si=6690142650324753" target="_blank"><p>Tokyo Ghetto</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/316BhPQ7kG9yPqZeLPTanl?si=86e442fe998548fa" target="_blank"><p>Outsider</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/7ktkUtIF7jJ8BX4s4QahZo?si=f64ca0b118ed48a9" target="_blank"><p>Mayoigo</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/1PrTeEDCnjZdlfQFl97rkp?si=da16d7e0ef984de9" target="_blank"><p>Yadorigi</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/0lKhq1jbS0C1SGM7XRvbva?si=3ff3c26cf95e4a0a" target="_blank"><p>Ambivalent</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/1E8ibEudXVcSKBFMtDjns6?si=e164128a3bdd4019" target="_blank"><p>Kaede</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/4gM814NneKElxn37F5Ht7G?si=24d2815aaaca44cc" target="_blank"><p>Last Dance</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/0baarNEChTM8MVb77ygFlT?si=1ed4321cbeb94f6f" target="_blank"><p>Bokuramadaunderground</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/3urEGiZYgpZlFxSkffWPOo?si=c0466c39c93b45c7" target="_blank"><p>Kiminisekai</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/3CnubXqsaiItqLpYtkRQYE?si=2d49867847864d77" target="_blank"><p>Dawn</p></a>
+            </div>
+        </div>
+    </div>
+    <div id="bluepage" class="albumpage" style="display: none;">
+        <a href="https://open.spotify.com/album/2QWSqoeGoHB8OPMkVu1AHt?si=UEfqzR47S6uYhzn2RM4Hmw" target="_blank"><img src="./Images/Blue.jpeg" alt=""></a>
+        <a href="#Blue" class="button" onclick="show('mainsongpage','bluepage')">Back</a>
+        <p>Blue</p>
+        <p><span>2018 &#x2022; 7 songs</span></p>
+        <hr><hr><hr class="division">
+        <div class="songtitles">
+            <div class="songtitle first">
+                <a href="https://open.spotify.com/track/5GJP8H6Qe9K0EN8U6jp5cl?si=6619a263004d4241" target="_blank"><p>Myojo Galactica</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/2KqTXUP2FyUQ8MXDYKtjZ9?si=650a4777b22542df" target="_blank"><p>Nonsence philosophy</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/4iCeWE5MkIHt9xrgl9YVSa?si=58869d6354ef460a" target="_blank"><p>Chocolate Town</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/5tSvyb7RMd24kLEpVw57yQ?si=fe6ffa1c176b4e3b" target="_blank"><p>Dr.</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/29Wl3xj1Sg4405FbkOdGCd?si=cc242b650acf4d55" target="_blank"><p>tig-hug</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/3rxvZZmcbp4KtMxhxydRaQ?si=771863c992274343" target="_blank"><p>Fake</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/2qtCthv8huqIS2Wg5CsWBT?si=9caf7ca36fcf4a35" target="_blank"><p>Hakushi no haru</p></a>
+            </div>
+        </div>
+    </div>
+    <div id="bunkapage" class="albumpage" style="display: none;">
+        <a href="https://open.spotify.com/album/2rrihVXNDB7FSe6EFs2inI?si=zFSSLHzXR16nyeoizQldhg" target="_blank"><img src="./Images/Bunka Cover.webp" alt=""></a>
+        <a href="#Bunka" class="button" onclick="show('mainsongpage','bunkapage')">Back</a>
+        <p>Bunka</p>
+        <p><span>2017 &#x2022; 10 songs</span></p>
+        <hr><hr><hr class="division">
+        <div class="songtitles">
+            <div class="songtitle first">
+                <a href="https://open.spotify.com/track/5leWhh3B9S2pzSLn5PIxYb?si=a2adfda277a6432c" target="_blank"><p>fanfare - instrumental</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/4PaZP3ZPHCl6IpFUSuY1Rn?si=4203f63cb91741d5" target="_blank"><p>Nonsense Bungaku</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/72uSoNIf7eScfGZFQjNHrR?si=6e519a9d0c4a4677" target="_blank"><p>Dramaturgy</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/1MafB8R0qpi0qALqFOqQxO?si=b1b45a12eae84164" target="_blank"><p>Homesick</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/67gYAheGPb06KwCkuAaHbF?si=f47e2cf563664750" target="_blank"><p>Anoko Secret</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/0m7tpV83VZcbKbYQGBFFSt?si=d03e49f105fc4ce8" target="_blank"><p>Kaishingeki</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/4hGG4KDQmxMnKjUc9Fi5KL?si=0524651db780458e" target="_blank"><p>Furiwoshita</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/23kr9acGXnWRGdYlUhzMWO?si=ec7b1c2e84094318" target="_blank"><p>Hitsuji wo kozoete</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/4ly9rdCe3PvcYZdAN72T3b?si=9f03713f84fb47f0" target="_blank"><p>Okinimesumama</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/3an3dldCGawQRH879jNv7V?si=e3ac6539f56442bc" target="_blank"><p>paradigm - instrumental</p></a>
+            </div>
+        </div>
+    </div>
+    <div id="offnumpage" class="albumpage" style="display: none;">
+        <a href="https://open.spotify.com/album/2AxkAqRmDqZJB03UPQaC0B?si=ZevcT3-ZS3K1es1wI75QIQ" target="_blank"><img src="./Images/Official Num.jpeg" alt=""></a>
+        <a href="#Official-Number" class="button" onclick="show('mainsongpage','offnumpage')">Back</a>
+        <p>Official Number</p>
+        <p><span>2016 &#x2022; 10 songs</span></p>
+        <hr><hr><hr class="division">
+        <div class="songtitles">
+            <div class="songtitle first">
+                <a href="https://open.spotify.com/track/1hqe6NBh1h7jbwwyXl5mzU?si=71153e9c24da4e70" target="_blank"><p>Doshiyomonaikuraini kimisuki</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/0i63w4CwgSbS5Ggjn91rhA?si=2b2f18d898d049fc" target="_blank"><p>Caravan</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/08oABwy91rrSwXd5I36QdE?si=cfb898298c1a482a" target="_blank"><p>Wakusei loop</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/1rozSWFaumcSqLVFHd0nB5?si=1ee9714b083a4cc0" target="_blank"><p>Demon dance tokyo</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/2QerQi2fdfatbYKX2MJWx5?si=5c1cd1dc62384155" target="_blank"><p>Fuyukan</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/3XgFj2mQZWeHQYkCDb40ny?si=6f5fe543bcf24d10" target="_blank"><p>Short umbrella</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/5FS79PQGFG4MGqsi0UIA5J?si=22e51b123cab44e9" target="_blank"><p>Rabbit gray</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/0eLXCmF9beawT6viktgEpc?si=829f634e40a64746" target="_blank"><p>Perfect seimei</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/7H7OEk6ntIHA5CjW518Wfg?si=5599eda3d65e4582" target="_blank"><p>Meru factory - Re arrange ver</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/5DjszFQHnH2MtZLrOduvQy?si=ac60d87764fe4dfa" target="_blank"><p>sister - Re arrange ver</p></a>
+            </div>
+        </div>
+
+    </div>
+    <div id="roundrpage" class="albumpage" style="display: none;">
+        <a href="https://open.spotify.com/album/0crZBnPLO6rcP1BsZl20ug?si=rzJj6E-GTZ-Q8PINDppfmw" target="_blank"><img src="./Images/round robin.jpg" alt=""></a>
+        <a href="#Round-Robin" class="button" onclick="show('mainsongpage','roundrpage')">Back</a>
+        <p>Round Robin</p>
+        <p><span>2015 &#x2022; 10 songs</span></p>
+        <hr><hr><hr class="division">
+        <div class="songtitles">
+            <div class="songtitle first">
+                <a href="https://open.spotify.com/track/163cbTas8gnnNKRnsjaiG2?si=5a3e04f56a364bba" target="_blank"><p>Namaemo shiranai anatani koi wo</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/4WOZN72Pcr2ZhKMUsSqEpV?si=50aafc15de904080" target="_blank"><p>Round Robin</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/5dQOfUDX1xXLpY7wBLq6fv?si=ee9bc1d354394d28" target="_blank"><p>Miginimagirl</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/1YWnDXLCW52h4KVVEzFZ6N?si=21063378e2e3469f" target="_blank"><p>Fukanzen na shogu - album ver</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/4ZD5sOS75saE1IJXeEqwHq?si=e2f49407c3f549eb" target="_blank"><p>Hantaishasen</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/61tOy40UTmUsML5lH7H8b6?si=11e23b53b43b4f93" target="_blank"><p>Fallin My World</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/6f8aeOMHqcn7pm2gWA6UPb?si=11f7f29ef64d4299" target="_blank"><p>Meru facotry</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/22fwB1PflNxzomHdsBHBC3?si=db7c5747cb2247b2" target="_blank"><p>Shinjuku sick</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/7eln5FHo4COAJwfwcEMNK0?si=eb430300ee2c49cc" target="_blank"><p>Ikanaide - album ver</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/3ZJE3KV2kPXKJZBzX6zpNS?si=179818dde7314a26" target="_blank"><p>Goodbye day</p></a>
+            </div>
+        </div>
+    </div>
+    <div id="wonderwpage" class="albumpage" style="display: none;">
+        <a href="https://open.spotify.com/album/1RKJFdPlDfbLxIvzpr6w8K?si=imM6VuVSSz20-2lproCXKw" target="_blank"><img src="./Images/wonder world.webp" alt=""></a>
+        <a href="#Wonder-World" class="button" onclick="show('mainsongpage','wonderwpage')">Back</a>
+        <p>Wonder World</p>
+        <p><span>2015 &#x2022; 7 songs</span></p>
+        <hr><hr><hr class="division">
+        <div class="songtitles">
+            <div class="songtitle first">
+                <a href="https://open.spotify.com/track/0r6OU9KwLWn4yeDbhy7FCT?si=7655d772abc940e1" target="_blank"><p>Yoru no yume</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/3zvrme1BSrfaU6cwzv0Mii?si=850e3eee11b7465f" target="_blank"><p>Arukari seizin</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/4wMYqiun2wNTxWKXwAx0IM?si=1b3e50290bf243c3" target="_blank"><p>Senkouhanabu</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/45k2GDmnqjiJod2V259DAt?si=e1e05e3cba2c4ad9" target="_blank"><p>Heroumerou</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/1WhIXkCOmEJzmkVUlYji1c?si=27082908c24e4625" target="_blank"><p>Shinkirou</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/6q4lSROPEGqEzZZFjbjVDU?si=e005c43ab77a42b5" target="_blank"><p>Mataashita</p></a>
+            </div>
+            <div class="songtitle">
+                <a href="https://open.spotify.com/track/2C0nibGpFfGxRGk43IHEHw?si=84e02f5b24984fed" target="_blank"><p>Yoru wo koero</p></a>
+            </div>
+        </div>
+    </div>
+    <div id="footerseperator"></div>
+    <div id="pagefooter">
+        <div id="sns">
+          <a href="https://x.com/oo0eve0oo?lang=en" target="_blank"><img src="./Images/twitter-logo-black-and-white-2.jpg" alt="" class="first"></a>
+          <a href="https://www.instagram.com/eve_harapeco/" target="_blank"><img src="./Images/instagram.jpg" alt=""></a>
+          <a href="https://www.youtube.com/channel/UCUXfRsEIJ9xO1DT7TbEWksw" target="_blank"><img src="./Images/youtube logo.jpg" alt=""></a>
+          <a href="https://www.eveofficialstore.com/" target="_blank"><img src="./Images/shop image.png" alt=""></a>
+          <a href="https://eveofficial.com/" target="_blank"><img src="./Images/evelogowhite.jpg" alt=""></a>
+        </div>
+        <div id="copyright">
+          <p>All multimedia used <br> &#169; Eve <br> &#169; Toy's Factory </p>
+        </div>
+    </div>
+    <script>
+        var height = (document.getElementsByTagName("NAV")[0].offsetHeight)*0.9
+
+        /*Sticky NavBar Scroll*/
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            var height = (document.getElementsByTagName("NAV")[0].offsetHeight)*0.9
+            if (document.body.scrollTop > height || document.documentElement.scrollTop > height) {
+                document.getElementById("navbar").style.top = "0";
+            } else {
+                document.getElementById("navbar").style.top = "-200px";
+            }
+        }
+    </script>
+    
+</body>
+</html>

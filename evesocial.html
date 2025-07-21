@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="eve.css">
+    <title>Eve - Socials</title>
+    <link rel="icon" href="./Images/evelogoOG.jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/charriot-deluxe" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/bitbold" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/arcade-classic" rel="stylesheet">
+    
+    <!--AOS Animation Library-->
+    <link href="https://fonts.cdnfonts.com/css/superbly" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body>
+    <!--Navigation Menu-->
+    <div id = "navbar">
+        <img src="./Images/evelogoorange.jpg" alt="">
+        <div id="navbuttons">
+            <a href="evesocial.html" class="current">Socials</a>
+            <a href="evegame.html">Game</a>
+            <a href="evesongs.html">Songs</a>
+            <a href="eveevents.html">Events</a>
+            <a href="eveabout.html">About</a>
+        </div>
+    </div>
+    
+
+    <nav>
+        <img src="./Images/evelogoorange.jpg" alt="">
+        <hr>
+        <a href="eveabout.html">About</a>
+        <a href="eveevents.html">Events</a>
+        <a href="evesongs.html">Songs</a>
+        <a href="evegame.html">Game</a>
+        <a href="evesocial.html" class="current">Socials</a>
+    </nav>
+    <div id="slinks">
+        <img src="./Images/socialBG.jpg" alt="" id="background">
+        <div class="othercontent">
+            <h3>Official Links</h3>
+            <hr>
+            <div id="snsicons" class="center">  
+                <a href="https://x.com/oo0eve0oo?lang=en" target="_blank"><img src="./Images/twitter-logo-black-and-white-2.jpg" alt=""></a>
+                <a href="https://www.instagram.com/eve_harapeco/" target="_blank"><img src="./Images/instagram.jpg" alt=""></a>
+                <a href="https://www.youtube.com/channel/UCUXfRsEIJ9xO1DT7TbEWksw" target="_blank"><img src="./Images/youtube logo.jpg" alt=""></a>
+                <a href="https://www.eveofficialstore.com/" target="_blank"><img src="./Images/shop image.png" alt=""></a>
+                <a href="https://eveofficial.com/" target="_blank"><img src="./Images/evelogowhite.jpg" alt=""></a>
+            </div>
+        </div>
+    </div>
+    <script>
+        var height = (document.getElementsByTagName("NAV")[0].offsetHeight)*0.9
+
+        /*Sticky NavBar Scroll*/
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            var height = (document.getElementsByTagName("NAV")[0].offsetHeight)*0.9
+            if (document.body.scrollTop > height || document.documentElement.scrollTop > height) {
+                document.getElementById("navbar").style.top = "0";
+            } else {
+                document.getElementById("navbar").style.top = "-200px";
+            }
+        }
+    </script>
+</body>
+</html>

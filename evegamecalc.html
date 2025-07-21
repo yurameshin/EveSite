@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="eve.css">
+    <title>Eve - Game</title>
+    <link rel="icon" href="./Images/evelogoOG.jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/charriot-deluxe" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/bitbold" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/arcade-classic" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/minecraft-3" rel="stylesheet">
+    <!--AOS Animation Library-->
+    <link href="https://fonts.cdnfonts.com/css/superbly" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        function finalise(finalscore){
+            if (finalscore <= 3){
+                var feedback = "Brush up on your Eve knowledge!"
+            }
+            else if (finalscore <= 5){
+                var feedback = "Not bad... But could be better..."
+            }
+            else if (finalscore <= 8){
+                var feedback = "Your knowledge on Eve is pretty good!"
+            }
+            else if (finalscore <= 9){
+                var feedback = "Almost... so close!"
+            }
+            else{
+                var feedback = "You are a TRUE Eve fan!"
+            }
+            document.getElementById("finalres").innerText = `You Got ${String(finalscore)}/10`
+            document.getElementById("resfeed").innerText = feedback
+        }
+    </script>
+</head>
+<body>
+    <!--Navigation Menu-->
+    <div id = "navbar">
+        <img src="./Images/evelogoorange.jpg" alt="">
+        <div id="navbuttons">
+            <a href="evesocial.html">Socials</a>
+            <a href="evegame.html" class="current">Game</a>
+            <a href="evesongs.html">Songs</a>
+            <a href="eveevents.html">Events</a>
+            <a href="eveabout.html">About</a>
+        </div>
+    </div>
+    
+    <nav>
+        <img src="./Images/evelogoorange.jpg" alt="">
+        <hr>
+        <a href="eveabout.html">About</a>
+        <a href="eveevents.html">Events</a>
+        <a href="evesongs.html">Songs</a>
+        <a href="evegame.html" class="current">Game</a>
+        <a href="evesocial.html">Socials</a>
+    </nav>
+    <div id="quiz">
+        <div id = "results">
+            <h1 id="finalres" class="center">placeholder</h1>
+            <h2 id="resfeed" class="center">placeholder</h2>
+            <a href="evegame.html" class="center"><span id="navbutton">Retake the Quiz!</span></a>
+        </div>
+    </div>
+    <div id="footerseperator"></div>
+    <div id="pagefooter">
+        <div id="sns">
+          <a href="https://x.com/oo0eve0oo?lang=en" target="_blank"><img src="./Images/twitter-logo-black-and-white-2.jpg" alt="" class="first"></a>
+          <a href="https://www.instagram.com/eve_harapeco/" target="_blank"><img src="./Images/instagram.jpg" alt=""></a>
+          <a href="https://www.youtube.com/channel/UCUXfRsEIJ9xO1DT7TbEWksw" target="_blank"><img src="./Images/youtube logo.jpg" alt=""></a>
+          <a href="https://www.eveofficialstore.com/" target="_blank"><img src="./Images/shop image.png" alt=""></a>
+          <a href="https://eveofficial.com/" target="_blank"><img src="./Images/evelogowhite.jpg" alt=""></a>
+        </div>
+        <div id="copyright">
+          <p>All multimedia used <br> &#169; Eve <br> &#169; Toy's Factory </p>
+        </div>
+    </div>
+    <script>
+        var formData = location.search;
+        console.log(formData)
+        formData = formData.split("&")
+        console.log(formData)
+        var count = 0
+        for (i = 0; i < formData.length; i++){
+            if (formData[i].includes("correct")){
+                count += 1
+            }
+        }
+        console.log(count)
+        setTimeout(finalise(count),2000)
+
+        AOS.init({
+            duration: 2000
+        })
+
+        var height = (document.getElementsByTagName("NAV")[0].offsetHeight)*0.9
+
+        /*Sticky NavBar Scroll*/
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            var height = (document.getElementsByTagName("NAV")[0].offsetHeight)*0.9
+            if (document.body.scrollTop > height || document.documentElement.scrollTop > height) {
+                document.getElementById("navbar").style.top = "0";
+            } else {
+                document.getElementById("navbar").style.top = "-200px";
+            }
+        }
+    </script>
+    
+</body>
+</html>

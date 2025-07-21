@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="eve.css">
+    <title>Eve - Game</title>
+    <link rel="icon" href="./Images/evelogoOG.jpeg">
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/minecraft-3" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/charriot-deluxe" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/bitbold" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/arcade-classic" rel="stylesheet">
+
+    <!--AOS Animation Library-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        //Function to show a certain part of the page
+        function show(shown, hidden) {
+            document.getElementById(shown).style.display='block';
+            document.getElementById(hidden).style.display='none';
+            return false;
+        }
+    </script>
+    <script>
+        //Function to calculate score of quiz
+        function calc(){
+            var score = 0
+            var undonecheck = 0
+            var undone = []
+            for (let i = 1; i<11;i++){
+                var lst = document.getElementsByName("qn"+String(i))
+                for (let y = 0; y < lst.length; y++){
+                    console.log(lst[y].value)
+                    if ((lst[y].value == "correct") && ((lst[y]).checked)){
+                        score += 1
+                        console.log(score)
+                    }
+                }
+            }
+            return score
+        }
+
+        function checked(){
+            var undone = []
+            console.log('running check')
+            for (let i = 1; i<11;i++){
+                var lst = document.getElementsByName("qn"+String(i))
+                var undonecheck = 0
+                for (let y = 0; y < lst.length; y++){
+                    console.log(lst[y].value)
+                    if (!(lst[y].checked)){
+                        undonecheck += 1
+                        console.log("undone")
+                    }
+                }
+                if (undonecheck == 4){
+                    undone.push("qn" + String(i))
+                    console.log('qn'+String(i))
+                }
+            }
+            if(undone.length != 0){
+                document.getElementById("undoneqns").innerHTML = "You have undone questions:<br>" + undone.join(", ")
+            }
+            else{
+                document.getElementById("undoneqns").innerText = "You have completed all the questions"
+            }
+            console.log(undone)
+            console.log(undone.length == 0)
+        }
+
+        function alerting(shown,hidden){
+            document.getElementById("quizheader").style.display='none'
+            checked()
+            show(shown,hidden)
+        }
+    </script>
+    <script>
+        //Function to show final results by calling both functions and give feedback based on user's score
+        function finalise(shown,hidden){
+            var finalscore = calc()
+            if (finalscore <= 3){
+                var feedback = "Brush up on your Eve knowledge!"
+            }
+            else if (finalscore <= 5){
+                var feedback = "Not bad... But could be better..."
+            }
+            else if (finalscore <= 8){
+                var feedback = "Your knowledge on Eve is pretty good!"
+            }
+            else if (finalscore <= 9){
+                var feedback = "Almost... so close!"
+            }
+            else{
+                var feedback = "You are a TRUE Eve fan!"
+            }
+            document.getElementById("finalres").innerText = `You Got ${String(finalscore)}/10`
+            document.getElementById("resfeed").innerText = feedback
+            show(shown,hidden)
+        }
+    </script>
+</head>
+<body id="evegamepage">
+    <!--Navigation Menu-->
+    <div id = "navbar">
+        <img src="./Images/evelogoorange.jpg" alt="">
+        <div id="navbuttons">
+            <a href="evesocial.html">Socials</a>
+            <a href="evegame.html" class="current">Game</a>
+            <a href="evesongs.html">Songs</a>
+            <a href="eveevents.html">Events</a>
+            <a href="eveabout.html">About</a>
+        </div>
+    </div>
+    
+    <nav>
+        <img src="./Images/evelogoorange.jpg" alt="">
+        <hr>
+        <a href="eveabout.html">About</a>
+        <a href="eveevents.html">Events</a>
+        <a href="evesongs.html">Songs</a>
+        <a href="evegame.html" class="current">Game</a>
+        <a href="evesocial.html">Socials</a>
+    </nav>
+    <div id = "quiz" class="center" data-aos="fade-in">
+        <div id="start">
+            <h1 id="quizheader">How much do you know about EVE?</h1>
+            <p>Test your knowledge about Eve here!</p>
+            <br>
+            <a href="#" onclick="return show('qn1','start')"><span id="navbutton">Start the quiz!</span></a>
+
+        </div>
+        <form action="evegamecalc.html" method="get">
+            <div id = "qn1" style="display: none">
+                <h2>Q1: What is Eve's most popular song of all time?</h2>
+                <label class = "quizcont">Fight Song
+                    <input type="radio" name="qn1">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="quizcont">Dramaturgy
+                    <input type="radio" name="qn1">
+                    <span class="checkmark"></span>
+                </label>
+                <br>
+                <label class="quizcont">KaiKai Kitan
+                    <input type="radio" name="qn1" value="correct">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="quizcont">Inochi no Tabekata
+                    <input type="radio" name="qn1">
+                    <span class="checkmark"></span>
+                </label>
+                <br>
+                <a href="#" onclick="return show('qn2','qn1');"><span id ="navbutton">Next</span></a>
+
+            </div>
+            <div id = "qn2" style = "display:none">
+                <h2>Q2: When did Eve debut with his first album: "Wonder World"?</h2>
+                <label class = "quizcont">2013
+                    <input type="radio" name="qn2">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="quizcont">2015
+                    <input type="radio" name="qn2" value = "correct">
+                    <span class="checkmark"></span>
+                </label>
+                <br>
+                <label class="quizcont">2009
+                    <input type="radio" name="qn2">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="quizcont">2018
+                    <input type="radio" name="qn2">
+                    <span class="checkmark"></span>
+                </label>
+                <br>
+                <div id="navbuttons">
+                    <a href="#" onclick="return show('qn1','qn2');"><span id="navbutton">Back</span></a>
+                    <a href="#" onclick="return show('qn3','qn2');"><span id ="navbutton">Next</span></a>
+                </div>
+            </div>
+            <div id = "qn3" style="display:none">
+                <h2>Q3: What is Eve's first single ever released?</h2>
+                <label class = "quizcont">Dramaturgy
+                    <input type="radio" name="qn3">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="quizcont">Demon Dance Tokyo
+                    <input type="radio" name="qn3">
+                    <span class="checkmark"></span>
+                </label>
+                <br>
+                <label class="quizcont">Nonsense Bungaku
+                    <input type="radio" name="qn3" value = "correct">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="quizcont">Anoko Secret
+                    <input type="radio" name="qn3">
+                    <span class="checkmark"></span>
+                </label>
+                <br>
+                <div id="navbuttons">
+                    <a href="#" onclick="return show('qn2','qn3');"><span id="navbutton">Back</span></a>
+                    <a href="#" onclick="return show('qn4','qn3');"><span id="navbutton">Next</span></a>
+                </div>
+            </div>
+            <div id = "qn4" style="display:none">
+                <h2>Q4: What was Eve's alias before he became Eve?</h2>
+                <label class = "quizcont">Shiron
+                    <input type="radio" name="qn4">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="quizcont">Kurowa
+                    <input type="radio" name="qn4" value="correct">
+                    <span class="checkmark"></span>
+                </label>
+                <br>
+                <label class="quizcont">Keito
+                    <input type="radio" name="qn4">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="quizcont">Kurotora
+                    <input type="radio" name="qn4">
+                    <span class="checkmark"></span>
+                </label>
+                <br>
+                <div id="navbuttons">
+                    <a href="#" onclick="return show('qn3','qn4');"><span id="navbutton">Back</span></a>
+                    <a href="#" onclick="return show('qn5','qn4');"><span id="navbutton">Next</span></a>
+                </div>
+            </div>
+            <div id = "qn5" style="display:none">
+                <h2>Q5: Which of his albums has charted at 2nd (peak) in the japanese charts?</h2>
+                <label class = "quizcont">Smile
+                    <input type="radio" name="qn5" value="correct">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="quizcont">Otogi
+                    <input type="radio" name="qn5">
+                    <span class="checkmark"></span>
+                </label>
+                <br>
+                <label class="quizcont">Kaizin
+                    <input type="radio" name="qn5">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="quizcont">Bunka
+                    <input type="radio" name="qn5">
+                    <span class="checkmark"></span>
+                </label>
+                <br>
+                <div id="navbuttons">
+                    <a href="#" onclick="return show('qn4','qn5');"><span id="navbutton">Back</span></a>
+                    <a href="#" onclick="return show('qn6','qn5');"><span id="navbutton">Next</span></a>
+                    </div>
+            </div>
+            <div id = "qn6" style="display:none">
+                <h2>Q6: Which of the anime below has Eve not made a song for?</h2>
+                <label class = "quizcont">Jujustsu Kaisen
+                    <input type="radio" name="qn6">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="quizcont">Attack on Titan
+                    <input type="radio" name="qn6" value="correct">
+                    <span class="checkmark"></span>
+                </label>
+                <br>
+                <label class="quizcont">Chainsaw Man
+                    <input type="radio" name="qn6">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="quizcont">My Hero Academia
+                    <input type="radio" name="qn6">
+                    <span class="checkmark"></span>
+                </label>
+                <br>
+                <div id="navbuttons">
+                    <a href="#" onclick="return show('qn5','qn6');"><span id="navbutton">Back</span></a>
+                    <a href="#" onclick="return show('qn7','qn6');"><span id="navbutton">Next</span></a>
+                </div>
+            </div>
+            <div id = "qn7" style="display:none">
+                <h2>Q7: What is the name of the character that Eve often uses as part of his branding?</h2>
+                <label class = "quizcont">Hitotsume-sama
+                    <input type="radio" name="qn7" value="correct">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="quizcont">ToppoHatto-san
+                    <input type="radio" name="qn7">
+                    <span class="checkmark"></span>
+                </label>
+                <br>
+                <label class="quizcont">Meitsuclo-san
+                    <input type="radio" name="qn7">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="quizcont">Ichisume-sama
+                    <input type="radio" name="qn7">
+                    <span class="checkmark"></span>
+                </label>
+                <br>
+                <div id="navbuttons">
+                    <a href="#" onclick="return show('qn6','qn7');"><span id="navbutton">Back</span></a>
+                    <a href="#" onclick="return show('qn8','qn7');"><span id="navbutton">Next</span></a>
+                </div>
+            </div>
+            <div id = "qn8" style="display:none">
+                <h2>Q8: What is the name of the Illustrator that has worked with Eve on many of his MVs?</h2>
+                <label class = "quizcont">Waboku
+                    <input type="radio" name="qn8">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="quizcont">Mariyasu
+                    <input type="radio" name="qn8">
+                    <span class="checkmark"></span>
+                </label>
+                <br>
+                <label class="quizcont">Zemyata
+                    <input type="radio" name="qn8">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="quizcont">Mah
+                    <input type="radio" name="qn8" value="correct">
+                    <span class="checkmark"></span>
+                </label>
+                <br>
+                <div id="navbuttons">
+                    <a href="#" onclick="return show('qn7','qn8');"><span id="navbutton">Back</span></a>
+                    <a href="#" onclick="return show('qn9','qn8');"><span id="navbutton">Next</span></a>
+                </div>
+            </div>
+            <div id = "qn9" style="display:none">
+                <h2>Q9: Which is the famous guitarist that arranges many of Eve's songs?</h2>
+                <label class = "quizcont">Syu
+                    <input type="radio" name="qn9">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="quizcont">Miyavu
+                    <input type="radio" name="qn9">
+                    <span class="checkmark"></span>
+                </label>
+                <br>
+                <label class="quizcont">Numa
+                    <input type="radio" name="qn9" value = "correct">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="quizcont">Ichika
+                    <input type="radio" name="qn9">
+                    <span class="checkmark"></span>
+                </label>
+                <br>
+                <div id="navbuttons">
+                    <a href="#" onclick="return show('qn8','qn9');"><span id="navbutton">Back</span></a>
+                    <a href="#" onclick="return show('qn10','qn9');"><span id="navbutton">Next</span></a>
+                </div>
+            </div>
+            <div id = "qn10" style="display: none;">
+                <h2>Q10: What is the Name of the singer that collaborated with Eve on his album "Ao"?</h2>
+                <label class = "quizcont">Sou
+                    <input type="radio" name="qn10" value="correct">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="quizcont">Numba
+                    <input type="radio" name="qn10">
+                    <span class="checkmark"></span>
+                </label>
+                <br>
+                <label class="quizcont">Suis
+                    <input type="radio" name="qn10">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="quizcont">Uta
+                    <input type="radio" name="qn10">
+                    <span class="checkmark"></span>
+                </label>
+            
+                <br>
+                <div id="navbuttons">
+                    <a href="#" onclick="return show('qn9','qn10');"><span id="navbutton">Back</span></a>
+                    <a href="#" onclick="return alerting('confirm','qn10');"><span id="navbutton">Submit</span></a>
+                </div>
+            </div>
+            <div id = "confirm" style="display:none">
+                    <h1 id="confirmstatement">Are you sure you want to submit?</h1>
+                    <p id="undoneqns">All questions are filled in.</p>
+                    <a href="#" onclick="return show('qn10','confirm')"><span id="navbutton">Cancel</span></a>
+                    <input type="submit" value="Confirm"><span id="navbutton"></span></input>
+            </div>
+        </form>
+    </div>
+    <div id="footerseperator"></div>
+    <div id="pagefooter">
+        <div id="sns">
+          <a href="https://x.com/oo0eve0oo?lang=en" target="_blank"><img src="./Images/twitter-logo-black-and-white-2.jpg" alt="" class="first"></a>
+          <a href="https://www.instagram.com/eve_harapeco/" target="_blank"><img src="./Images/instagram.jpg" alt=""></a>
+          <a href="https://www.youtube.com/channel/UCUXfRsEIJ9xO1DT7TbEWksw" target="_blank"><img src="./Images/youtube logo.jpg" alt=""></a>
+          <a href="https://www.eveofficialstore.com/" target="_blank"><img src="./Images/shop image.png" alt=""></a>
+          <a href="https://eveofficial.com/" target="_blank"><img src="./Images/evelogowhite.jpg" alt=""></a>
+        </div>
+        <div id="copyright">
+          <p>All multimedia used <br> &#169; Eve <br> &#169; Toy's Factory </p>
+        </div>
+    </div>
+
+    <script>
+        AOS.init({
+            duration: 1500,
+        })
+        var height = (document.getElementsByTagName("NAV")[0].offsetHeight)*0.9
+
+        /*Sticky NavBar Scroll*/
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            var height = (document.getElementsByTagName("NAV")[0].offsetHeight)*0.9
+            if (document.body.scrollTop > height || document.documentElement.scrollTop > height) {
+                document.getElementById("navbar").style.top = "0";
+            } else {
+                document.getElementById("navbar").style.top = "-200px";
+            }
+        }
+    </script>
+</body>
+</html>

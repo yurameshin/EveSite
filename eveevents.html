@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="eve.css">
+    <title>Eve - Events</title>
+    <link rel="icon" href="./Images/evelogoOG.jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/charriot-deluxe" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/bitbold" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/arcade-classic" rel="stylesheet">
+    <style>
+    </style>
+    <script>
+        function show(shown, hidelist,elem,elemlist) {
+            document.getElementsByClassName(shown)[0].style.display='block';
+            for(i=0;i<hidelist.length;i++){
+                document.getElementsByClassName(hidelist[i])[0].style.display='none';
+            }
+            elem.classList.add('current')
+            for(i=0;i<elemlist.length;i++){
+                document.getElementById(elemlist[i]).classList.remove('current')
+
+            }
+            return false;
+        }
+        /*Taken from https://youtu.be/snhpoxtLugU?si=vb43l8vpycKeqx6- */
+        function toggle(obj){
+            var blur = document.getElementById('blur')
+            blur.classList.toggle('active')
+            console.log(obj)
+            var popup = document.getElementById(obj)
+            popup.classList.toggle('active')
+        }
+    </script>
+</head>
+<body>
+    <div class="mainpage" id="blur">
+        <!--Navigation Menu-->
+        <div id = "navbar">
+            <img src="./Images/evelogoorange.jpg" alt="">
+            <div id="navbuttons">
+                <a href="evesocial.html">Socials</a>
+                <a href="evegame.html">Game</a>
+                <a href="evesongs.html">Songs</a>
+                <a href="eveevents.html" class="current">Events</a>
+                <a href="eveabout.html">About</a>
+            </div>
+        </div>
+        
+
+        <nav>
+            <img src="./Images/evelogoorange.jpg" alt="">
+            <hr>
+            <a href="eveabout.html">About</a>
+            <a href="eveevents.html" class="current">Events</a>
+            <a href="evesongs.html">Songs</a>
+            <a href="evegame.html">Game</a>
+            <a href="evesocial.html">Socials</a>
+        </nav>
+
+        <div id="eventnav">
+            <button class="current" id="futurebut"onclick="show('future',['present','past'],this,['presentbut','pastbut'])">Upcoming</button>
+            <button class="back" id="presentbut"onclick="show('present',['future','past'],this,['futurebut','pastbut'])">Current</button>
+            <button class="back" id="pastbut" onclick="show('past',['present','future'],this,['presentbut','futurebut'])">Previous</button>
+        </div>
+
+        <div id="culturetour" class="future">
+            <h1>Culture</h1>
+            <h2>Additional Live in Seoul</h2>
+            <hr>
+            <a href="https://eveofficial.com/news/20240727190459.html" target="_blank"><img src="./Images/eve culture additional live seoul.jpg" alt="" class="center"></a>
+            <div class="eventinfo">
+                <h3>"Culture" Additional Live in Seoul!</h3>
+                <p>Location: Korea University Tiger Dome</p>
+                <p>Dates: October 5th and 6th</p>
+                <p>Doors Open: 5pm KST</p>
+                <p>Doors Close: 6pm KST</p>
+            </div>
+        </div>
+        <div id="culturetour" class="present" style="display: none;">
+            <h1 class="center">No events currently...</h1>
+            <hr>
+            <img src="./Images/inochi no tabekata.gif" alt="" class="center">
+        </div>
+        <div id="culturetour" class="past" style="display: none;">
+            <h1>Culture</h1>
+            <h2>Eve Asia Tour</h2>
+            <hr>
+            <a href="https://eveofficial-culture.com/" target="_blank"><img src="./Images/eve2024asiatour_Announce.png" alt="" class="center"></a>
+            <p id="header" class="center">Tour Schedule</p>
+            <table border="">
+                <tr><th>Location</th><th>Venue</th><th>Date</th><th>Door Open</th><th>Start Time</th></tr>
+                <tr><td>Hong Kong</td><td>MacPherson Stadium</td><td>8 May</td><td>19:00</td><td>20:00</td></tr>
+                <tr><td>Seoul</td><td>YES 24 LIVE HALL</td><td>12 May</td><td>17:00</td><td>18:00</td></tr>
+                <tr><td>Singapore</a></td><td>The Theatre at Mediacorp</td><td>22 May</td><td>19:00</td><td>20:00</td></tr>
+                <tr><td>Kuala Lumpur</a></td><td>Zepp KUALA LUMPUR</td><td>24 May</td><td>18:30</td><td>20:00</td></tr>
+                <tr><td>Jakarta</a></td><td>Tennis Indoor Senayan</td><td>26 May</td><td>18:00</td><td>20:00</td></tr>
+                <tr><td>Taipei</a></td><td>Zepp New Taipei</td><td>6 June</td><td>18:00</td><td>19:00</td></tr>
+            </table>
+            <p id = "tablefoot" class="center">*All times stated are in the countries' respective local times</p>
+        </div>
+        <div id="footerseperator"></div>
+        <div id="pagefooter">
+            <div id="sns">
+              <a href="https://x.com/oo0eve0oo?lang=en" target="_blank"><img src="./Images/twitter-logo-black-and-white-2.jpg" alt="" class="first"></a>
+              <a href="https://www.instagram.com/eve_harapeco/" target="_blank"><img src="./Images/instagram.jpg" alt=""></a>
+              <a href="https://www.youtube.com/channel/UCUXfRsEIJ9xO1DT7TbEWksw" target="_blank"><img src="./Images/youtube logo.jpg" alt=""></a>
+              <a href="https://www.eveofficialstore.com/" target="_blank"><img src="./Images/shop image.png" alt=""></a>
+              <a href="https://eveofficial.com/" target="_blank"><img src="./Images/evelogowhite.jpg" alt=""></a>
+            </div>
+            <div id="copyright">
+              <p>All multimedia used <br> &#169; Eve <br> &#169; Toy's Factory </p>
+            </div>
+        </div>
+    </div>
+    <!--<a class="twitter-timeline" href="https://twitter.com/oO0Eve0Oo?ref_src=twsrc%5Etfw">Tweets by oO0Eve0Oo</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>!-->
+    <script>
+        var height = (document.getElementsByTagName("NAV")[0].offsetHeight)*0.9
+
+        /*Sticky NavBar Scroll*/
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            var height = (document.getElementsByTagName("NAV")[0].offsetHeight)*0.9
+            if (document.body.scrollTop > height || document.documentElement.scrollTop > height) {
+                document.getElementById("navbar").style.top = "0";
+            } else {
+                document.getElementById("navbar").style.top = "-200px";
+            }
+        }
+    </script>
+</body>
+</html>
